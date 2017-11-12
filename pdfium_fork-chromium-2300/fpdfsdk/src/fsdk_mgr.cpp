@@ -211,17 +211,20 @@ FX_SYSTEMTIME CFX_SystemHandler::GetLocalTime()
 	return m_pEnv->FFI_GetLocalTime();
 }
 
-
+#if 0
 CJS_RuntimeFactory* GetJSRuntimeFactory()
 {
 	static CJS_RuntimeFactory s_JSRuntimeFactory;
 	return &s_JSRuntimeFactory;
 }
+#endif
 
 CPDFDoc_Environment::CPDFDoc_Environment(CPDF_Document* pDoc) :
 	m_pAnnotHandlerMgr(NULL),
 	m_pActionHandler(NULL),
+#if 0
 	m_pJSRuntime(NULL),
+#endif
 	m_pInfo(NULL),
 	m_pSDKDoc(NULL),
 	m_pPDFDoc(pDoc),
@@ -231,10 +234,11 @@ CPDFDoc_Environment::CPDFDoc_Environment(CPDF_Document* pDoc) :
 	m_pSysHandler = NULL;
 	m_pSysHandler = new CFX_SystemHandler(this);
 
-	
+#if 0	
 	m_pJSRuntimeFactory = NULL;
 	m_pJSRuntimeFactory = GetJSRuntimeFactory();
 	m_pJSRuntimeFactory->AddRef();
+#endif
 }
 
 CPDFDoc_Environment::~CPDFDoc_Environment()
@@ -245,9 +249,11 @@ CPDFDoc_Environment::~CPDFDoc_Environment()
 		delete m_pIFormFiller;
 		m_pIFormFiller = NULL;
 	}
+#if 0
 	if(m_pJSRuntime && m_pJSRuntimeFactory)
 		m_pJSRuntimeFactory->DeleteJSRuntime(m_pJSRuntime);
 	m_pJSRuntimeFactory->Release();
+#endif
 
 	if(m_pSysHandler)
 	{
@@ -272,12 +278,16 @@ CPDFDoc_Environment::~CPDFDoc_Environment()
 
 IFXJS_Runtime* CPDFDoc_Environment::GetJSRuntime()
 {
+#if 0
 	if(!IsJSInitiated())
 		return NULL;
 	assert(m_pJSRuntimeFactory);
 	if(!m_pJSRuntime)
 		m_pJSRuntime = m_pJSRuntimeFactory->NewJSRuntime(this);
 	return m_pJSRuntime;
+#else
+	return NULL;
+#endif
 }
 
 CPDFSDK_AnnotHandlerMgr* CPDFDoc_Environment::GetAnnotHandlerMgr()

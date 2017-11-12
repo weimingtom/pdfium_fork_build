@@ -372,7 +372,9 @@ public:
 private:
 	CPDFSDK_AnnotHandlerMgr* m_pAnnotHandlerMgr;
 	CPDFSDK_ActionHandler*	m_pActionHandler;
+#if 0
 	IFXJS_Runtime*	m_pJSRuntime;
+#endif
 public:
 	FPDF_FORMFILLINFO* GetFormFillInfo() {return m_pInfo;}
 private:
@@ -383,9 +385,10 @@ private:
 
 	CFFL_IFormFiller* m_pIFormFiller;
 	IFX_SystemHandler* m_pSysHandler;
-
+#if 0
 public:
 	CJS_RuntimeFactory*  m_pJSRuntimeFactory;
+#endif
 };
 
 
