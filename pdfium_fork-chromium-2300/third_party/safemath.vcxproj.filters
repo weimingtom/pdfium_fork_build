@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="numerics">
+      <UniqueIdentifier>{168745A4-2F0D-B7A8-2F10-9299025EF8C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="numerics">
+      <UniqueIdentifier>{168745A4-2F0D-B7A8-2F10-9299025EF8C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="numerics">
+      <UniqueIdentifier>{168745A4-2F0D-B7A8-2F10-9299025EF8C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="numerics">
+      <UniqueIdentifier>{168745A4-2F0D-B7A8-2F10-9299025EF8C6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="logging.h"/>
+    <ClInclude Include="macros.h"/>
+    <ClInclude Include="template_util.h"/>
+    <ClInclude Include="numerics\safe_conversions.h">
+      <Filter>numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="numerics\safe_conversions_impl.h">
+      <Filter>numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="numerics\safe_math.h">
+      <Filter>numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="numerics\safe_math_impl.h">
+      <Filter>numerics</Filter>
+    </ClInclude>
+    <None Include="third_party.gyp"/>
+  </ItemGroup>
+</Project>
